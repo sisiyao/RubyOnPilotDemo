@@ -1,4 +1,4 @@
-# Ruby on Pilot Example App
+# Ruby on Pilot Demo App
 
 This app was built on top of the [Ruby on Pilot framework](https://github.com/sisiyao/RubyOnPilot), a lightweight MVC framework inspired by Ruby on Rails.
 
