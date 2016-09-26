@@ -14,23 +14,13 @@
   <h1><%= @artist.name %></h1>
   <div class="artist-options">
     <div class="artist-options-link-container">
-      <form action="/artists/<%= @artist.id %>/edit" method="GET">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input class="artist-options-link" type="submit" value="Edit Artist">
-      </form>
+      <a href="/artists/<%= @artist.id %>/edit" class="artist-options-link">Edit Artist</a>
     </div>
     <div class="artist-options-link-container">
-      <form action="/artists/<%= @artist.id %>" method="POST">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input type="hidden" name="_method" value="DELETE">
-        <input class="artist-options-link" type="submit" value="Delete Artist">
-      </form>
+      <a href="/artists/<%= @artist.id %>" class="artist-options-link">Delete Artist</a>
     </div>
     <div class="artist-options-link-container">
-      <form action="/albums/new" method="GET">
-        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-        <input class="artist-options-link" type="submit" value="Add Album">
-      </form>
+      <a href="/albums/new" class="artist-options-link">Add Album</a>
     </div>
   </div>
   <div class="albums">
