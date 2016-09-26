@@ -1,0 +1,94 @@
+.artist-img {
+  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  margin-top: 30px;
+}
+
+img {
+  width: 100%;
+}
+
+h1 {
+  font-size: 40px;
+  text-align: center;
+  padding: 30px 20px 0 20px;
+}
+
+.artist-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.artist-options-link {
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  color: black;
+  text-decoration: none;
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  min-width: 100px;
+  max-width: 100px;
+  border-radius: 5px;
+  color: blue;
+}
+
+.artist-options-link-container {
+  margin: 20px 10px;
+}
+
+.artist-options-link:hover {
+  cursor: pointer;
+  background-color: #e2e2e2;
+}
+
+.albums {
+  min-width: 700px;
+  max-width: 700px;
+  margin: 10px auto;
+  box-sizing: border-box;
+}
+
+.album {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-bottom: 50px;
+  border-top: 2px solid #cdcdcd;
+}
+
+.album-img {
+  min-width: 150px;
+  max-width: 150px;
+  height: 100px;
+  border: 1px solid #cdcdcd;
+  margin-right: 5px;
+  margin-top: 20px;
+}
+
+.album-details {
+  min-width: 500px;
+  max-width: 500px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.album-name {
+  max-width: 500px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 0;
+}
+
+.album-track-title {
+  padding-top: 20px;
+}
+
+.album-track-title:last-child {
+  padding-bottom: 20px;
+}

@@ -1,0 +1,88 @@
+<head>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-family: sans-serif;
+    }
+
+    .error-title {
+      border: 0;
+      background-color: black;
+      color: white;
+      width: 100%;
+      font-size: 40px;
+      padding: 30px 20px;
+    }
+
+    .error-section {
+      padding: 50px 200px;
+      background-color: #f0f0f0;
+      border-bottom: 1px solid black;
+    }
+
+    .error-header {
+      text-align: center;
+      font-size: 30px;
+      padding: 20px 0;
+    }
+
+    .error-message {
+      padding: 10px 10px;
+    }
+
+    .error-content, .error-message {
+      background-color: #dbdbdb;
+      min-width: 550px;
+    }
+
+    .error-content-highlight {
+      background-color: yellow;
+      min-width: 550px;
+    }
+
+    .error-content, .error-content-highlight {
+      padding: 0 10px;
+    }
+
+    .error-content:first-of-type, .error-content-highlight:first-of-type {
+      padding-top: 10px;
+    }
+
+    .error-content:last-of-type, .error-content-highlight:last-of-type {
+      padding-bottom: 10px;
+    }
+
+    .backtrace, .source-code {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <div class='error-title'>Runtime Error</div>
+  <div class='error-section'>
+    <div class='error-header'>Error Message</div>
+    <div class='error-message'><%= error_message %></div>
+  </div>
+  <div class='error-section'>
+    <div class='error-header'>Stack Trace</div>
+    <ul class='backtrace'>
+      <% stacktrace.each do |line| %>
+        <li class='error-content'><%= File.expand_path(line) %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class='error-section'>
+    <div class='error-header'>Source Code</div>
+    <ul class='source-code'>
+      <% source_code_lines.each_with_index do |line, idx| %>
+        <% css_class = idx == 3 ? 'error-content-highlight' : 'error-content' %>
+        <li class=<%= css_class %>><%= line %></li>
+      <% end %>
+    </ul>
+  </div>
+</body>

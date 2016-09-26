@@ -1,0 +1,25 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/reset.css" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/header.css" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/artist_form.css" type="text/css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="button"><a href="/artists">MyMusicApp</a></div>
+    <div class="button"><a href="/artists/<%= @artist.id %>">Cancel</a></div>
+  </div>
+
+  <div class="filler"></div>
+  <h1>Edit Artist</h1>
+  <div class="errors"><%= flash[:errors].join(", ") if flash[:errors] %></div>
+  <div class="form">
+    <form action="/artists/<%= @artist.id %>" method="POST">
+      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+      <input type="hidden" name="_method" value="PATCH">
+      <input class="input" type="text" name="artist[name]" placeholder="Name" value="<%= @artist.name %>">
+      <input class="input" type="text" name="artist[image_url]" placeholder="Image URL" value="<%= @artist.image_url %>">
+      <input class="submit" type="submit" value="Submit">
+    </form>
+  </div>
+</body>

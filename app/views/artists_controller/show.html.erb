@@ -1,0 +1,50 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/reset.css" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/header.css" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/artist_show.css" type="text/css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="button"><a href="/artists">MyMusicApp</a></div>
+    <div class="button"><a href="/artists/new">+ Artist</a></div>
+  </div>
+  <div class="filler"></div>
+  <div class="artist-img"><img src="<%= @artist.image_url %>"/></div>
+  <h1><%= @artist.name %></h1>
+  <div class="artist-options">
+    <div class="artist-options-link-container">
+      <form action="/artists/<%= @artist.id %>/edit" method="GET">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input class="artist-options-link" type="submit" value="Edit Artist">
+      </form>
+    </div>
+    <div class="artist-options-link-container">
+      <form action="/artists/<%= @artist.id %>" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="hidden" name="_method" value="DELETE">
+        <input class="artist-options-link" type="submit" value="Delete Artist">
+      </form>
+    </div>
+    <div class="artist-options-link-container">
+      <form action="/albums/new" method="GET">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input class="artist-options-link" type="submit" value="Add Album">
+      </form>
+    </div>
+  </div>
+  <div class="albums">
+    <% @albums.each do |album| %>
+      <div class="album">
+        <div class="album-img"><img src="<%= album.image_url %>"/></div>
+        <div class="album-details">
+          <div class="album-name"><%= album.name %></div>
+          <% @tracks.each do |track| %>
+          <% next if track.album_id != album.id %>
+          <div class="album-track-title"><%= track.title %></div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</body>

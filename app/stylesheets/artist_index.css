@@ -1,0 +1,53 @@
+h1 {
+  font-size: 40px;
+  text-align: center;
+  padding: 30px 20px 0 20px;
+}
+
+h2 {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px 20px 0 20px;
+  color: gray;
+}
+
+.artists {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 1000px;
+  padding: 0 15px;
+}
+
+.artist {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.artist-img {
+  width: 280px;
+  height: 280px;
+  border: 1px solid #cdcdcd;
+  overflow: hidden;
+}
+
+img {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.artist > a:link, .artist > a:visited {
+  color: black;
+  text-decoration: none;
+}
+
+.artist:hover {
+  cursor: pointer;
+  background-color: #e2e2e2;
+}
+
+.artist:hover h2 {
+  color: black;
+}

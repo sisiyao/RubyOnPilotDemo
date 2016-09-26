@@ -1,0 +1,24 @@
+<head>
+  <link rel="stylesheet" href="/stylesheets/reset.css" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/header.css" type="text/css">
+  <link rel="stylesheet" href="/stylesheets/artist_index.css" type="text/css">
+</head>
+
+<body>
+  <div class="header">
+    <div class="button"><a href="/artists">MyMusicApp</a></div>
+    <div class="button"><a href="/artists/new">+ Artist</a></div>
+  </div>
+  <div class="filler"></div>
+  <h1>Artists</h1>
+    <div class="artists">
+      <% @artists.each do |artist| %>
+        <div class="artist">
+          <a  href="/artists/<%= artist.id %>">
+            <div class="artist-img"><img src="<%= artist.image_url %>"/></div>
+            <h2><%= artist.name %></h2>
+          </a>
+        </div>
+      <% end %>
+    </div>
+</body>
